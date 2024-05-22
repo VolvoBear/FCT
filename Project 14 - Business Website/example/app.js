@@ -5,7 +5,7 @@ function secretMessage() {
     alert("You have unlocked the secret message!")
 }
 function displayDog() {
-    document.getElementById("dogContent").style.display = "block";
+    document.getElementById("BearBlankets").style.display = "block";
     document.getElementById("catContent").style.display = "none";
     document.getElementById("defaultContent").style.display = "none";
 }
