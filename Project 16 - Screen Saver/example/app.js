@@ -10,6 +10,7 @@ var pen = undefined; // Pen set up when the document is done loading.
 var xPosition = 100;
 var yPosition = 100;
 var xSpeed = 1;
+var ySpeed = 1;
 var size = 20;
 
 // draws a square at position (x, y) with given size and color
@@ -26,6 +27,15 @@ function checkCollision() {
     if (xPosition > 200 - size) {
         xSpeed = -1;
     }
+    if (xPosition < 0 - size) {
+        xSpeed = 1;
+    }
+    if (yPosition > 200 - size) {
+        ySpeed = -1;
+    }
+    if (yPosition < 0 - size) {
+        ySpeed = 1;
+    }
     // TODO: students should add another if statement here!
 }
 
@@ -33,6 +43,7 @@ function checkCollision() {
 function update() {
     pen.clearRect(0, 0, canvas.width, canvas.height);
     xPosition += xSpeed;
+    yPosition += ySpeed;
     checkCollision()
     drawSquare(xPosition, yPosition, size, 'cyan');
 }
